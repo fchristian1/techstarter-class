@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Author:Christian Fröchtenicht fc1(at)gmx.net
+# License: MIT
+# Version: 1.0.0
+# CreateDate: 20240514 ISO
+# EditDate: 20240514 ISO
+# Name: ce - check exit
+# Description: execute a function and check exitcode and print out a a message
+
+cat /1 >/dev/null
+if [ $? -eq 0 ]; then
+	echo "Erfolgreich"
+else
+	echo "Fehler"
+fi
+

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Author:Christian Fröchtenicht fc1(at)gmx.net
+# License: MIT
+# Version: 1.0.0
+# CreateDate: 20240514 ISO
+# EditDate: 20240514 ISO
+# Name: 7_cattxt
+# Description: loop over all files with an specific extension in a folder an print the name out
+
+ext="txt"
+for file in *.$ext; do
+	echo $file
+done
+
+

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Author:Christian Fröchtenicht fc1(at)gmx.net
+# License: MIT
+# Version: 1.0.0
+# CreateDate: 20240514 ISO
+# EditDate: 20240514 ISO
+# Name: 3_for
+# Description: ---')
+
+for file in ./*; do
+	cat $file
+done
+

@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Author:Christian Fröchtenicht fc1(at)gmx.net
+# License: MIT
+# Version: 1.0.0
+# CreateDate: 20240514 ISO
+# EditDate: 20240514 ISO
+# Name: 4_email
+# Description: expect a email as argument and check the format
+echo $1
+if [ $# -eq 1 ]; then
+	if [[ $1 =~ ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$ ]]; then
+		echo "Email $1 is ok"
+	else 
+		echo "Emailformat is not ok"
+	fi
+else
+	echo "expect one argument as an email"
+fi
