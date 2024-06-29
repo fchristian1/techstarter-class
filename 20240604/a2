@@ -1,0 +1,20 @@
+#!/usr/bin/python3
+
+# Author:Christian Fröchtenicht fc1(at)gmx.net
+# License: MIT
+# Version: 1.0.0
+# CreateDate: 20240604-110436 ISO
+# EditDate: 20240604-110436 ISO
+# Name: aufgabe2.py
+# Description: ---
+
+string=input("gebe Text ein:\n")
+print("UPPER:\t\t" + string.upper())
+print("LOWER:\t\t" + string.lower())
+newstring=""
+for c in string:
+    if c.islower():
+        newstring += c.upper()
+    else:
+        newstring += c.lower()
+print("OPPOSITE:\t" + newstring)

@@ -1,0 +1,5 @@
+#!/usr/bin/python3
+string=input()
+print("Die länge des strings ist: " + str(len(string))
+)
+
