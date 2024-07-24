@@ -10,6 +10,8 @@ function quadF(num) {
 }
 
 numsQuad = nums.map(quadF);
-console.log(numsQuad);
+//console.log(numsQuad);
 
-log(numsQuad);
+//log(numsQuad);
+
+console.log(numsQuad[numsQuad.length - 1]);
