@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Universal Sans Display", Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+#car_img {
+  width: 500px;
+  height: auto;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+.fs-28 {
+  font-size: 28px;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+.row {
+  flex-direction: row;
+}
+.col {
+  flex-direction: column;
+}
+.click {
+  cursor: pointer;
+  padding: 5px;
+  width: 60px;
+  border: 3px solid rgba(0, 0, 0, 0);
+  border-radius: 100%;
+}
+.click-active {
+  border: 3px solid blue;
+}
