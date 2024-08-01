@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo</title>
+  </head>
+  <body>
+    <div>
+      <h1>Meine ToDo App</h1>
+      <div>
+        <input type="text" name="new_todo" id="new_todo_text" />
+        <button id="add_todo">Hinzufügen</button>
+      </div>
+      <div>
+        <div>
+          <br />
+          <button id="show_delete">ShowDelete</button>
+        </div>
+        <ul id="todo_list"></ul>
+      </div>
+    </div>
+    <script>
+      const todoList = document.getElementById("todo_list");
+      const newTodoText = document.getElementById("new_todo_text");
+      const addTodoButton = document.getElementById("add_todo");
+      const buttonShowDeleteButton = document.getElementById("show_delete");
+      let showDeleteButton = false;
+
+      const todos = [];
+      const status = ["🟠", "✅"];
+
+      buttonShowDeleteButton.addEventListener("click", (t) => {
+        buttonShowDeleteButton.innerText = showDeleteButton ? "ShowDelete" : "HideDelete";
+        showDeleteButton = !showDeleteButton;
+        renderTodos();
+      });
+      loadTodos();
+
+      addTodoButton.addEventListener("click", () => {
+        const newTodo = { id: crypto.randomUUID(), text: newTodoText.value, status: 0 };
+        if (!newTodo.text || newTodo.text.trim() === "") {
+          return;
+        }
+        todos.push(newTodo);
+        newTodoText.value = "";
+        saveTodos();
+        renderTodos();
+      });
+
+      function saveTodos() {
+        localStorage.setItem("todos", JSON.stringify(todos));
+      }
+
+      function loadTodos() {
+        const storedTodos = localStorage.getItem("todos");
+        if (storedTodos) {
+          todos.push(...JSON.parse(storedTodos));
+          renderTodos();
+        }
+      }
+
+      function renderTodos() {
+        todoList.innerHTML = "";
+        todos.forEach((todo, index) => {
+          const todoElement = document.createElement("li");
+          todoElement.id = todo.id;
+          todoElement.appendChild(createStatusChangeButton(todo));
+          showDeleteButton ? todoElement.appendChild(deleteToDoSpan(todo)) : null;
+          todoElement.appendChild(createTextSpan(todo));
+          todoList.appendChild(todoElement);
+        });
+      }
+      function deleteToDoSpan(todo) {
+        const deleteToDoSpan = document.createElement("span");
+        deleteToDoSpan.style.cursor = "pointer";
+        deleteToDoSpan.innerText = "❌";
+        deleteToDoSpan.addEventListener("click", () => {
+          todos.splice(todos.indexOf(todo), 1);
+          saveTodos();
+          renderTodos();
+        });
+        return deleteToDoSpan;
+      }
+
+      function createTextSpan(todo) {
+        const textSpan = document.createElement("span");
+        textSpan.innerText = todo.text;
+        return textSpan;
+      }
+      function createStatusChangeButton(todo) {
+        const statusChangeButton = document.createElement("span");
+        statusChangeButton.style.cursor = "pointer";
+        statusChangeButton.innerText = status[todo.status];
+        statusChangeButton.addEventListener("click", () => {
+          todo.status = (todo.status + 1) % status.length;
+          saveTodos();
+          renderTodos();
+        });
+        return statusChangeButton;
+      }
+    </script>
+  </body>
+</html>

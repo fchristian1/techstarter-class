@@ -4,14 +4,64 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      #error {
+        color: red;
+      }
+    </style>
   </head>
+
   <body>
-    <script>
-      fetch("https://wttr.in/Peine?format=j1")
-        .then((response) => response.json())
-        .then((data) => {
-          console.log(data);
-        });
-    </script>
+    <input value="Peine" id="place" type="text" />
+    <button onclick="clickAbfragen()">Abfragen</button>
+    <div>
+      <p id="error"></p>
+      <p>Temp: <span id="temp"></span></p>
+      <p>Ort: <span id="areaName"></span></p>
+    </div>
   </body>
+  <script>
+    const inputPlaceHTML = document.getElementById("place");
+    const tempTextHTML = document.getElementById("temp");
+    const placeTextHTML = document.getElementById("areaName");
+    const errorHTML = document.getElementById("error");
+
+    async function clickAbfragen() {
+      init();
+      let { tempData, placeData } = await getData();
+      renderTemp(tempData, placeData);
+    }
+
+    function init() {
+      errorHTML.innerText = "";
+    }
+
+    async function getData() {
+      const p = inputPlaceHTML.value;
+      const data = await anfrage(p);
+      console.log(data);
+
+      let tempData = data.current_condition[0].FeelsLikeC;
+      let placeData = data.nearest_area[0].areaName[0].value;
+      if (placeData == "Ban Not") {
+        renderError();
+        return;
+      }
+      return { tempData, placeData };
+    }
+
+    async function anfrage(place) {
+      return await fetch(`https://wttr.in/${place}?format=j1`)
+        .then((response) => response.json())
+        .then((data) => data)
+        .catch((error) => error);
+    }
+    function renderError() {
+      errorHTML.innerText = "Ort nicht gefunden";
+    }
+    function renderTemp(temp, place) {
+      tempTextHTML.innerText = temp + "°C";
+      placeTextHTML.innerText = place;
+    }
+  </script>
 </html>
