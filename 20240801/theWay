@@ -1,0 +1,3 @@
+temp:   current_condition[0].temp_C
+ort:    nearest_area[0].areaName[0].value
+desc:   current_condition[0].weatherDesc[0].value

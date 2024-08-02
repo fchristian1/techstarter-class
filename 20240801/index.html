@@ -29,7 +29,7 @@
     async function clickAbfragen() {
       init();
       let { tempData, placeData } = await getData();
-      renderTemp(tempData, placeData);
+      renderTemperatur(tempData, placeData);
     }
 
     function init() {
@@ -59,8 +59,8 @@
     function renderError() {
       errorHTML.innerText = "Ort nicht gefunden";
     }
-    function renderTemp(temp, place) {
-      tempTextHTML.innerText = temp + "°C";
+    function renderTemperatur(temp, place) {
+      tempTextHTML.innerText = temp + " °C";
       placeTextHTML.innerText = place;
     }
   </script>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .hover {
+        color: red;
+        transform: translateX(100px);
+        transition: 500ms;
+      }
+      .nohover {
+        transform: translateX(0px);
+        transition: 500ms;
+      }
+    </style>
+  </head>
+  <body>
+    <input class="flex col test" type="text" id="place_value" />
+    <button onclick="clickAnfrage()">Abfrage</button>
+    <button onclick="test()">Test</button>
+
+    <div>
+      <span class="flex red" id="error"></span><br />
+      <p id="test3" class="red">
+        Temp:
+        <span id="temp"></span>
+      </p>
+      <p>
+        Ort:
+        <span id="place"></span>
+      </p>
+      <p>
+        Beschreibung:
+        <span id="desc"></span>
+      </p>
+    </div>
+  </body>
+  <script>
+    const tempHTML = document.getElementById("temp");
+    const placeHTML = document.getElementById("place");
+    const descHTML = document.getElementById("desc");
+    const placeInputHTML = document.getElementById("place_value");
+    const errorHTML = document.getElementById("error");
+    const test3 = document.getElementById("test3");
+    let animation = false;
+
+    async function clickAnfrage() {
+      errorHTML.innerText = "";
+      let place = placeInputHTML.value;
+
+      let data = await fetch(`https://wttr.in/${place}?format=j1`)
+        .then((res) => res.json())
+        .then((data) => data);
+      let tempData = data.current_condition[0].temp_C;
+      let placeData = data.nearest_area[0].areaName[0].value;
+      let descData = data.current_condition[0].weatherDesc[0].value;
+
+      if (placeData === "Ban Not") {
+        errorHTML.innerText = "Ort nicht gefunden";
+        return;
+      }
+      tempHTML.innerText = tempData + "°C";
+      placeHTML.innerText = placeData;
+      descHTML.innerText = descData;
+    }
+  </script>
+</html>
