@@ -20,6 +20,7 @@ const superhelden = [
 ];
 
 app.get("/superhelden", (req, res) => {
+  console.log("req");
   let randomNumberA, randomNumberB;
   do {
     randomNumberA = Math.floor(Math.random() * superhelden.length);
