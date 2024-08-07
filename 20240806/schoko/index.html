@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schokorezept</title>
+  </head>
+  <body>
+    <button onclick="clickHandlerRandomSchoko()">Random-Schokorezept</button>
+    <span id="rezept"></span>
+  </body>
+  <script>
+    const rezeptHTML = document.getElementById("rezept");
+    async function clickHandlerRandomSchoko() {
+      let data = await fetch("http://18.198.48.227:3000/schokolade")
+        .then((response) => response.json())
+        .then((data) => data);
+
+      rezeptHTML.innerText = data;
+    }
+  </script>
+</html>
