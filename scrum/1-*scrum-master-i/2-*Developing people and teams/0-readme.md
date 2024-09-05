@@ -1,0 +1,4 @@
+https://www.scrum.org/resources/professional-scrum-competency-developing-people-and-teams
+# **Entwicklung von Personen und Teams**
+
+>In traditionellen Managementmodellen liegt die Verantwortung für die Entwicklung von Personen und Teams bei den Führungskräften. Im Scrum-Framework übernimmt der Scrum Master eine spezielle Rolle bei der Unterstützung und Anleitung der Teammitglieder sowie anderer Mitglieder der Organisation. Dennoch ist die Team-Entwicklung nicht alleinige Aufgabe des Scrum Masters. Da Scrum-Teams selbstorganisierend sind, sind alle Teammitglieder dafür verantwortlich, das Team kontinuierlich zu verbessern. Dies geschieht durch Techniken, die die „Entwicklung von Personen und Teams“ fördern.
