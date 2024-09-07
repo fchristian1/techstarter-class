@@ -19,14 +19,15 @@
   "keywords": [],
   "author": {
     "name": "",
-    "email": "",
-    "url": ""
+    "email": "fchristian1@gmx.net",
+    "url": "http://froechte.de"
   },
   "contributors": [],
   "scripts": {
     "dev": "node --watch index.js",
     "test": ""
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/node": "^22.5.4"
+  }
 }

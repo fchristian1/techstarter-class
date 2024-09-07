@@ -1,3 +1,8 @@
+// Aufgabe 3: Datei umbenennen und verschieben
+
+// Erstelle eine Node.js-Anwendung, um eine Datei mit dem Namen "oldfile.txt" in "newfile.txt"
+// umzubenennen und sie dann in einen neuen Ordner mit dem Namen "archive" zu verschieben.
+
 import fs from "node:fs";
 
 let oldfile = "oldfile.txt";
