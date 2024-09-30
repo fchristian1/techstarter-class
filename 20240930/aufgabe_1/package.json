@@ -1,0 +1,19 @@
+{
+  "name": "aufgabe_1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch index.js",
+    "start": "node index.js",
+    "dev-test": "node --watch --test index.js",
+    "test": "node --test index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/assert": "^1.5.10"
+  }
+}
