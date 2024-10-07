@@ -1,4 +1,3 @@
-import { afterEach, beforeEach, describe, it } from "mocha";
 import { Browser, Builder } from "selenium-webdriver";
 import { expect } from "chai";
 async function sleep(ms) {
