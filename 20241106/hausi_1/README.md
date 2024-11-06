@@ -4,6 +4,10 @@ backend mit node.js und express.js
 
 zusätzliches frontend mit react.js
 
+postman: https://www.postman.com/spacecraft-cosmologist-53585130/christian/collection/3cusf7t/hausi-20241106
+
+oser als datei: ./Hausi_20241106.postman_collection.json
+
 ausführung:
 
 ``` bash

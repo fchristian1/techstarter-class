@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "a98edb43-558c-431e-83d9-295d897789a8",
+		"name": "Hausi_20241106",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34511260",
+		"_collection_link": "https://www.postman.com/spacecraft-cosmologist-53585130/christian/collection/3cusf7t/hausi-20241106?action=share&source=collection_link&creator=34511260"
+	},
+	"item": [
+		{
+			"name": "GET all Items",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"get all items\", ()=>{",
+							"   pm.expect(pm.response.code, \"status must be 200\").to.be.equal(200);",
+							"   pm.expect(pm.response.json()).to.be.an(\"array\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_url}}/items",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET one Item by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_url}}/items",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add one item",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"create an item and has keys\",()=>{",
+							"    pm.expect(pm.response.code).to.be.equal(201);",
+							"    pm.expect(pm.response.json()).to.have.property(\"id\");",
+							"    pm.expect(pm.response.json()).to.have.property(\"name\");",
+							"    pm.expect(pm.response.json()).to.have.property(\"quantity\");",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"testitem\",\n    \"quantity\":10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_url}}/items",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update one item",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"testitem123\",\n    \"quantity\":\"10\",\n    \"id\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_url}}/items/1",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"items",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{api_url}}/items/1",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"items",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
