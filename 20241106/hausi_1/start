@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Starting Hausi"
-cd ./backend/
+cd backend/
 npm i
 cd ../frontend/
 npm i
