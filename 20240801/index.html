@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #error {
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <input value="Peine" id="place" type="text" />
+    <button id="abfrage" onclick="clickAbfragen">Abfragen</button>
+    <span id="error"></span>
+    <div>
+      <p>Temp: <span id="temp">-</span></p>
+      <p>Ort: <span id="areaName">-</span></p>
+      <p>Beschreibung: <span id="desc">-</span></p>
+    </div>
+  </body>
+  <script>
+    const inputPlaceHTML = document.getElementById("place");
+    const buttonAbfrageHTML = document.getElementById("abfrage");
+    const tempTextHTML = document.getElementById("temp");
+    const placeTextHTML = document.getElementById("areaName");
+    const descTextHTML = document.getElementById("desc");
+    const errorHTML = document.getElementById("error");
+    async function clickAbfragen() {
+      init();
+      renderLoading();
+      toggleDisableHTMLButton(buttonAbfrageHTML);
+      let { tempData, placeData, descData } = await getData();
+      init();
+      toggleDisableHTMLButton(buttonAbfrageHTML);
+      if (tempData == "" && placeData == "" && descData == "") return;
+      renderTemperatur(tempData, placeData, descData);
+    }
+
+    function init() {
+      errorHTML.innerText = "";
+      tempTextHTML.innerText = "-";
+      placeTextHTML.innerText = "-";
+      descTextHTML.innerText = "-";
+    }
+
+    async function getData() {
+      const p = inputPlaceHTML.value;
+      const data = await anfrage(p);
+
+      let tempData = data.current_condition[0].FeelsLikeC;
+      let placeData = data.nearest_area[0].areaName[0].value;
+      let descData = data.current_condition[0].weatherDesc[0].value;
+      if (placeData == "Ban Not") {
+        renderError();
+        return { tempData: "", placeData: "", descData: "" };
+      }
+      return { tempData, placeData, descData };
+    }
+
+    async function anfrage(place) {
+      return await fetch(`https://wttr.in/${place}?format=j1`)
+        .then((response) => response.json())
+        .then((data) => data)
+        .catch((error) => error);
+    }
+    function toggleDisableHTMLButton(element) {
+      element.disabled = !element.disabled;
+    }
+    function renderError() {
+      errorHTML.innerText = "Ort nicht gefunden";
+    }
+    function renderLoading() {
+      errorHTML.innerText = "Loading Data....";
+    }
+    function renderTemperatur(temp, place, desc) {
+      tempTextHTML.innerText = temp != "" ? temp + " °C" : "";
+      placeTextHTML.innerText = place;
+      descTextHTML.innerText = desc;
+    }
+  </script>
+</html>

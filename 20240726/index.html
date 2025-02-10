@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <form name="calc">
+      Zahl 1:
+      <input type="text" name="z1" />
+      Zahl 2:
+      <input type="text" name="z2" />
+
+      <input type="button" value="+" onclick="calculate(this.value)" />
+      <input type="button" value="-" onclick="calculate(this.value)" />
+      <input type="button" value="*" onclick="calculate(this.value)" />
+      <input type="button" value="/" onclick="calculate(this.value)" />
+    </form>
+    <h3>Das Ergebnis ist:</h3>
+    <h2 id="result"></h2>
+  </body>
+  <script>
+    let stopwatch;
+    function calculate(ops) {
+      let num1 = document.calc.z1.value;
+      let num2 = document.calc.z2.value;
+      let calcMode = ops;
+
+      let result = 0;
+
+      if (calcMode == "+") {
+        let resultAdd = parseInt(num1) + parseInt(num2);
+        result = resultAdd;
+      }
+      if (calcMode == "-") {
+        let resultSub = parseInt(num1) - parseInt(num2);
+        result = resultSub;
+      }
+      if (calcMode == "*") {
+        let resultMul = parseInt(num1) * parseInt(num2);
+        result = resultMul;
+      }
+      if (calcMode == "/") {
+        let resultDiv = parseInt(num1) / parseInt(num2);
+        result = resultDiv;
+      }
+      let ergebnisHtmlTag = document.getElementById("result");
+      ergebnisHtmlTag.innerText = result;
+    }
+  </script>
+</html>

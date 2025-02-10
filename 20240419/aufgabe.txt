@@ -1,0 +1,28 @@
+DebianGnu/Linux
+
+Welche Spezialsierung hat die Distro
+wo kommt sie vor 
+und wie wird sie Verwaltet?
+
+Q: 1. Spezialisierung
+
+----Q: 2. Vorkommen
+Laut Distrowatch was eine quasi Umfrage der Distros ist liegt Debian 
+in den Letzten 12 Monaten und Aktuell auf Platz 4 der Distros.
+
+Bei Umfragen in Deutschland liegt Debian auf Platz 2 hinter Ubuntu.
+
+DebianServer wird für Webserver neben UbuntuServer am meisten genutzt.
+
+Meist als LAMP (Linux, Apache, MySql, PHP) 
+also System, Webserver, Datenbank und Programmiersprache.
+
+DebianServer wird oft auch mit Samba als Fileserver eingesetzt.
+
+Debian kann vollumfanglich auf allen Systemen, Desktop wie Server
+eingestzt werden im Unternehmen.
+
+Q: 3. Verwaltung
+
+Q: 4. Geschichte
+

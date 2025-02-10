@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+      - name: postgres
+        image: postgres:latest
+        envFrom:
+        - secretRef:
+            name: postgres-secret
+        env:
+        - name: POSTGRES_DB
+          value: mydb
+        volumeMounts:
+        - name: postgres-storage
+          mountPath: /var/lib/postgresql/data  # Standard-PostgreSQL-Speicherort
+      volumes:
+      - name: postgres-storage
+        persistentVolumeClaim:
+          claimName: postgres-pvc

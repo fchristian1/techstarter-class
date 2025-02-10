@@ -1,0 +1,25 @@
+{
+  "name": "api-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js",
+    "test": "node --test",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down",
+    "docker:rm": "docker compose down -v --rmi all"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5",
+    "supertest": "^7.0.0"
+  }
+}

@@ -1,0 +1,8 @@
+#!/bin/bash
+echo "Building the project..."
+echo "Create docker images..."
+
+cd ./frontend && docker build -t fchristian1/frontend_aufgabe1:latest . && docker push fchristian1/frontend_aufgabe1:latest
+cd ../backend && docker build -t fchristian1/backend_aufgabe1:latest . && docker push fchristian1/backend_aufgabe1:latest
+
+echo "Docker images created and pushed to docker hub"

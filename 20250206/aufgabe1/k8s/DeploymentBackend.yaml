@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: fchristian1/backend_aufgabe1:latest
+        env:
+        - name: POSTGRES_PORT
+          value: "5432"
+        - name: POSTGRES_HOST
+          value: postgres
+        envFrom:
+        - secretRef:
+            name: postgres-secret

@@ -1,0 +1,11 @@
+{
+    "scripts": {
+        "docker:build": "docker build -t flask-api .",
+        "docker:run": "docker run -d -p 5000:5000 --name flask-container flask-api",
+        "docker:test": "echo $(curl -X GET http://localhost:5000)",
+        "docker:stop": "docker stop flask-container",
+        "docker:rm": "docker rm flask-container",
+        "docker:up": "npm run docker:build && npm run docker:run && sleep 1 && npm run docker:test",
+        "docker:down": "npm run docker:stop && npm run docker:rm"
+    }
+}

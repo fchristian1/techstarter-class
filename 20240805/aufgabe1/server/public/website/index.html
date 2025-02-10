@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coole Website</title>
+  </head>
+  <body>
+    <button onclick="fetchName()">Random Name</button>
+    <p id="name"></p>
+    <script>
+      async function fetchName() {
+        const nameHTML = document.getElementById("name");
+        let data = await fetch("http://localhost:3003/randomname");
+        let name = await data.json();
+        console.log(name.name);
+        nameHTML.innerText = name.name;
+      }
+    </script>
+  </body>
+</html>

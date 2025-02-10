@@ -1,0 +1,21 @@
+{
+  "name": "hausi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "chromedriver": "^129.0.2",
+    "fs": "^0.0.1-security",
+    "selenium-webdriver": "^4.25.0"
+  },
+  "devDependencies": {
+    "@types/selenium-webdriver": "^4.1.26"
+  }
+}

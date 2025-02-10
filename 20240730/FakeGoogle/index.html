@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Suche</title>
+  </head>
+
+  <body style="text-align: center">
+    <img src="google.jpg" />
+    <div style="background-color: #eeeeee; padding: 1rem">
+      <input id="google-suchfeld" style="width: 300px" value="" type="text" placeholder="Gebe ein Suchbegriff ein" />
+      <button id="button-suche">Suchen</button>
+    </div>
+    <div style="text-align: left">
+      <ul id="search-results-block" style="color: blue; list-style-type: none; display: flex; flex-direction: column; gap: 1rem"></ul>
+    </div>
+  </body>
+  <script>
+    let inputField = document.getElementById("google-suchfeld");
+    let searchButton = document.getElementById("button-suche");
+    let searchResultsBlock = document.getElementById("search-results-block");
+
+    let searchResults = {
+      berlin: [
+        {
+          title: "Einwohner Berlin - Website",
+          description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          url: "www.berlininfo.com",
+        },
+        {
+          title: "Berlin Travel Guide",
+          description: "Discover the best places to visit in Berlin.",
+          url: "www.berlintravel.com",
+        },
+        {
+          title: "Berlin History",
+          description: "Learn about the rich history of Berlin.",
+          url: "www.berlinhistory.com",
+        },
+      ],
+      paris: [
+        {
+          title: "Paris Travel Guide",
+          description: "Explore the city of lights with our travel guide.",
+          url: "www.paristravel.com",
+        },
+        {
+          title: "Eiffel Tower Facts",
+          description: "Interesting facts about the Eiffel Tower.",
+          url: "www.eiffeltowerfacts.com",
+        },
+        {
+          title: "Paris Museums",
+          description: "A guide to the best museums in Paris.",
+          url: "www.parismuseums.com",
+        },
+      ],
+      ny: [
+        {
+          title: "New York City Guide",
+          description: "Your ultimate guide to New York City.",
+          url: "www.nycguide.com",
+        },
+        {
+          title: "Statue of Liberty",
+          description: "Learn about the history of the Statue of Liberty.",
+          url: "www.statueofliberty.com",
+        },
+        {
+          title: "Broadway Shows",
+          description: "Find the best Broadway shows in New York.",
+          url: "www.broadwayshows.com",
+        },
+      ],
+      peine: [
+        {
+          title: "Peiner Festsäle",
+          description: "Historische Veranstaltungshalle in Peine für Konzerte und Events.",
+          url: "https://www.kulturring-peine.de/kulturring-peine/vermietungen/festsaele.php",
+        },
+        {
+          title: "Peiner Eule",
+          description: "Ein Wahrzeichen von Peine und beliebtes Fotomotiv.",
+          url: "https://www.peine.de/de/stadtinfos/geschichte/die-peiner-eule1.php",
+        },
+        {
+          title: "Stadtpark Peine",
+          description: "Grüne Oase in der Stadt für Spaziergänge und Erholung.",
+          url: "https://www.peine.de/de/kultur-freizeit/sehenswuerdigkeiten/stadtpark.php",
+        },
+        {
+          title: "Peiner Burgpark",
+          description: "Der Burgpark in Peine, eröffnet im Mai 2000, bietet auf 6.000 m² restaurierte Teile der historischen Befestigungsanlage und informative Hinweistafeln zur Geschichte der angrenzenden Burg Peine, die heute das Amtsgericht beherbergt.",
+          url: "https://www.peine.de/de/stadtinfos/stadtrundgang/rundgang-innenstadt-burgpark.php",
+        },
+      ],
+    };
+
+    function getResultElement({ title, description, url }) {
+      return `
+            <li style="display: flex; gap: 4px; flex-direction: column;">
+                <span style="display: block;"><a target="_blank" href="${url}">${title.split("").reverse().join("")}</a></span>
+                <span style="color: black;">${description.length > 100 ? description.substring(0, 100) + "..." : description}</span>
+                <span style="color: green; display: block;">${url}</span>
+            </li>
+        `;
+    }
+
+    function handlerStartSearch() {
+      let inputValue = inputField.value.toLowerCase();
+      if (!searchResults[inputValue]) {
+        searchResultsBlock.innerHTML = "<div style='color:black'>Keine Ergebnisse gefunden</div>";
+        return;
+      }
+
+      let results = searchResults[inputValue];
+      let innerHTMLText = "";
+      results.forEach((ae) => {
+        innerHTMLText += getResultElement(ae);
+      });
+      searchResultsBlock.innerHTML = innerHTMLText;
+
+      inputField.value = "";
+    }
+
+    function addDatalistToInput() {
+      let datalist = document.createElement("datalist");
+      datalist.id = "search-terms";
+      for (let key in searchResults) {
+        let option = document.createElement("option");
+        option.value = key;
+        datalist.appendChild(option);
+      }
+      inputField.setAttribute("list", "search-terms");
+      inputField.parentNode.appendChild(datalist);
+    }
+    addDatalistToInput();
+
+    searchButton.addEventListener("click", handlerStartSearch);
+    document.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        handlerStartSearch();
+      }
+    });
+  </script>
+</html>

@@ -1,0 +1,573 @@
+0930
+S. 27 - S.29 und dann machen wir die 3E-Abfrage
+
+Softwareentwicklungslebenszyklus (SDLC)
+
+Testen muß an das SDLC immer angepasst werden
+
+auswirkung auf Umfang und Zeitpunkt
+Detailgrad der Testdoku
+Wahl des Testverfahrens
+Umfang der Test-Automatisierung
+Rollen und Aufgaben des Testers
+
+bei iterativen SDLC schnelle ausführung und schnelle rückmeldung durch umfassende TestAutomatisierung
+
+schlanke doku
+
+
+zu jeder softwareentwiklung aktivität gibt es auch einen entsprechenden test
+
+es gibt immer nur ein test für eine sache auch in unteschiedlichen teststufen um wiederholungen zu vermeiden.
+
+frühes testen und schneller ShiftLeft ansatz um fehler schnell zu korrigieren
+
+methoden:
+
+tdd: testgetrieben entwicklung
+ohne einem großen Softwareentwurf erst der test dann der code dann refactoring nach grünen test
+
+atdd: abnahmetestgetriebene entwicklung 
+aus einem leistungsheft oder gestellten anforderungen 
+
+bdd verhaltensgetriebene entwicklung
+ein skript das ein verhalten in einfacher form beschreibt das dann zu test umgeschrieben wird um dann die software zu entwickeln
+
+
+
+
+
+
+S. 30 bis 32 bis 10.10
+
+DevOps bring Betrieb und Entwicklung auf einer Arbeitsebene zusammen um kontinuirlich auf neue Anforderungen zu reagieren. durch änderungen werden test angepasst und durch die test wird die gesammte software geprüft und dann freigegeben.
+
+Schnelle rückmeldung der Codequalität
+fördert den ShiftLeftAnsatz beim Testen
+förderung Automatischer Prozesse und stablie Testumgebungen
+weniger oder keine manuellen Test durch Automatisierung
+
+User und Benutzungstest bleiben weiterin bestanteil und bleiben weiterhin manuel
+
+ShiftLeft:
+frühes erstellen von test und frühes testen im SDLC
+änderungen der spezifikation continuirlich einarbeiten
+testfälle exemplarisch vorher schreiben
+cicd einsetzen um schnelle rückmeldungen zu bekommen und das die test zusammen mit dem code im repository stehen
+
+alle und vorallem die stakeholder müßen davon überzeugt sein
+
+retrospectiven am ende von iterationen zeigen
+was war erfolgreich
+was war nicht erfolgreich
+wie können wir verbessern
+
+das verbessert beim testen
+
+die effektivität/effizienz
+die qualität der testmittel
+der teamzusammenhalt
+qualität der testbasis
+zusammenarbeit
+
+
+Teststufen und Testarten
+
+Teststufen sind die verschiedenen Ebenen im Testprozess, in denen Software in Phasen wie Unit-Test, Integrationstest, Systemtest und Abnahmetest geprüft wird. 
+
+Unit-Test: Test einzelner isolierter Komponenten
+UnitIntegration-Test: Test der Schnittstellen und Interaktion der Komponenten
+System-Test: End-To-End Test einer Aufgabe und auch Simulationen
+SystemIntegrations-Test: Testen der schnittstellen der Systeme und deren externen Diensten.
+Abnahme-Test: Validierung und Nachweis der einsatzfähigkeit des Gesammtsystems mit allen gestellten anforderungen
+
+
+Testarten beziehen sich auf die spezifischen Methoden oder Ziele des Testens, wie zum Beispiel Funktionstests, Leistungstests oder Sicherheitstests.
+
+Funktionale-Test: was soll erfüllt werden funktional, vollständig, korrekt und zweckmäßig
+
+nicht Funktionale-Test: wie gut arbeitet das system, performant, kompatible, gebrauchstauglichkeit, zuverlässig, sicher, wartbar, übertragbar
+
+
+auch nich funktionale test sollten früh in der entwicklung beginnen, früherkennung entscheidet über den erfolg des projektes.
+
+BlackBox-Test: hier wird das system gegen seine spezifikation getestet
+
+WhiteBox-Test: Test über die struktur der Software 
+
+alle Testarten können auf alle Teststufen angewendet werden
+
+
+Fehlernachtest oder Regressionstest:
+
+Fehlernachtest:
+Nach Fehlerzustansbehehbung werden Alle oder nur die Betroffenene Test wieder ausgeführt
+
+Regressionstest:
+nach änderung test das keine nachteiligen folgen vorhanden sind. anforderungsanalyse wie groß der regresionstest sein soll
+
+regressionstests sollten in der ci immer automatisiert ausgeführt werden
+
+
+Wartungstest:
+Testvorbereitung und Test zu geplanten ereignissen in Produktion
+zu releases, hotfix, änderungen der betriebsumgebung, außerbetriebnahme (datenarchivierung, wiederherstellung oder wiederinbetriebnahme)
+
+umfang des test hängt von:
+risiko, größe des systems und der umfang der änderung ab
+
+S. 38 bis S. 40 . Bis 12.30
+
+Statische Test:
+
+Statische Tests prüfen Software ohne Ausführung.
+Code und Dokumente werden manuell oder mit Werkzeugen analysiert.
+Ziel: Fehler finden und Qualität verbessern.( Uninitialisierte Variable, Variable, die deklariert, aber nie verwendet wird, nicht erreichbarer Code, nicht wie gewünscht implementierte Entwurfsmuster)
+Zusammenarbeit von Testern, Entwicklern und Fachleuten an klaren, vollständigen und testbaren Anforderungen (z. B. User Stories).
+Statische Analyse erkennt Probleme frühzeitig mit weniger Aufwand.
+Keine Notwendigkeit für das Schreiben oder Ausführen von Testfällen.
+
+Frühes Aufdecken von Fehlerzuständen:
+Statische Tests identifizieren Fehler in den frühesten Phasen des 					 	Softwareentwicklungslebenszyklus (SDLC), was dem Grundsatz des frühen Testens entspricht.
+  
+Erkennung spezifischer Fehlerarten:
+Finden von Fehlern, die dynamische Tests nicht entdecken können, z. B. nicht erreichbarer Code, falsch implementierte Entwurfsmuster und Fehler in nicht ausführbaren Artefakten.
+  
+Qualitätsbewertung und Vertrauensbildung:
+Bewertung der Qualität von Arbeitsergebnissen und Aufbau von Vertrauen in diese durch Stakeholder.
+  
+Überprüfung der Anforderungen:
+Stakeholder stellen durch Reviews sicher, dass dokumentierte Anforderungen ihren tatsächlichen Bedürfnissen entsprechen.
+  
+Verbesserte Kommunikation und gemeinsames Verständnis:
+Frühe statische Tests fördern ein gemeinsames Verständnis und verbessern die Kommunikation zwischen den beteiligten Stakeholdern.
+  
+Einbindung verschiedener Stakeholder:
+Empfehlung, eine Vielzahl von Stakeholdern in statische Tests einzubeziehen, um bessere Ergebnisse zu erzielen.
+  
+Kosteneffizienz durch reduzierte Fehlerbehebung:
+Obwohl Reviews Kosten verursachen, reduzieren sie die Gesamtkosten des Projekts, da weniger Zeit für die Behebung von Fehlern im späteren Verlauf aufgewendet werden muss.
+  
+Effizientere Fehlererkennung im Code:
+Statische Analysen entdecken Codefehler effizienter als dynamische Tests, was zu weniger Fehlern und geringerem Entwicklungsaufwand führt.
+
+
+
+
+Unterschiede zwischen statischem Test und dynamischem Test:
+
+Fehlererkennung:
+Beide finden Fehlerzustände; einige Fehler können jedoch nur durch statischen oder dynamischen Test entdeckt werden.
+
+Art der Fehlerfindung:
+Statischer Test: Findet Fehlerzustände direkt im Code oder in Artefakten.
+Dynamischer Test: Findet Fehlerwirkungen, aus denen Fehlerzustände durch Analyse abgeleitet werden.
+
+Codepfade:
+Statischer Test entdeckt Fehler in selten ausgeführten oder schwer erreichbaren Codepfaden.
+
+Anwendbarkeit:
+
+Statischer Test: Auf nicht ausführbare und ausführbare Arbeitsergebnisse anwendbar.
+
+Dynamischer Test: Nur auf ausführbare Arbeitsergebnisse anwendbar.
+
+Qualitätsmerkmale:
+
+Statischer Test: Bewertet Merkmale unabhängig von Codeausführung (z. B. Wartbarkeit).
+
+Dynamischer Test: Bewertet Merkmale, die von Codeausführung abhängen (z. B. Performance).
+Typische Fehlerzustände, die durch statische Tests leichter/kostengünstiger gefunden werden:
+
+Anforderungsfehler:
+Inkonsistenzen, Widersprüche, Auslassungen, Ungenauigkeiten, Duplikationen.
+
+Entwurfsfehler:
+Ineffiziente Datenbankstrukturen, schlechte Modularität.
+
+Codefehler:
+Variablen mit undefinierten Werten.
+Nicht deklarierte Variablen.
+Unerreichbarer oder duplizierter Code.
+Übermäßige Komplexität des Codes.
+
+Standardabweichungen:
+Nichteinhaltung von Programmierstandards (z. B. Namenskonventionen).
+
+Schnittstellenfehler:
+Nicht übereinstimmende Anzahl, Typ oder Reihenfolge von Parametern.
+
+IT-Sicherheitslücken:
+Spezifische Schwachstellen wie Pufferüberläufe.
+
+Testbasis-Lücken:
+Fehlende oder ungenaue Abdeckung von Anforderungen, z. B. fehlende Tests für ein Abnahmekriterium.
+
+3.2 Feedback- und Reviewprozess
+
+3.2.1 Vorteile eines frühzeitigen und häufigen Stakeholder-Feedbacks
+
+Frühe Kommunikation von Qualitätsproblemen:
+Ermöglicht die zeitnahe Identifikation potenzieller Qualitätsprobleme.
+
+Vermeidung von Abweichungen von Stakeholder-Erwartungen:
+Geringe Einbeziehung kann zu Produkten führen, die nicht den Vorstellungen entsprechen.
+
+Reduzierung von Risiken:
+Nicht erfüllte Wünsche können zu Nacharbeiten, Verzögerungen, Schuldzuweisungen oder Projektfehlschlägen führen.
+
+Prävention von Missverständnissen:
+Häufiges Feedback verhindert Missverständnisse über Anforderungen.
+
+Schnelle Umsetzung von Änderungen:
+Sicherstellung, dass Änderungen verstanden und frühzeitig implementiert werden.
+
+Fokus auf wertvolle Features:
+Entwicklungsteam kann sich auf Features mit größtem Nutzen und positivem Einfluss auf Risiken konzentrieren.
+
+
+3.2.3 Rollen und Verantwortlichkeiten bei Reviews
+
+Bei Reviews sind verschiedene Stakeholder beteiligt, die unterschiedliche Rollen einnehmen können. Die wichtigsten Rollen und ihre Verantwortlichkeiten sind:
+
+Manager:
+
+Entscheidet, welche Arbeitsergebnisse geprüft werden sollen.
+Stellt Ressourcen wie Personal und Zeit für das Review bereit.
+Autor:
+
+Erstellt das Arbeitsergebnis, das überprüft wird.
+Nimmt Korrekturen basierend auf dem Feedback vor.
+Moderator (Facilitator):
+
+Sorgt für einen effektiven Ablauf der Reviewsitzungen.
+Übernimmt Mediation, Zeitmanagement und schafft eine offene Atmosphäre, in der jeder frei sprechen kann.
+Protokollant:
+
+Sammelt Anomalien und Feedback von den Gutachtern.
+Dokumentiert Entscheidungen und neue Anomalien, die während der Reviewsitzung entdeckt werden.
+Gutachter (Reviewer):
+
+Führen das Review des Arbeitsergebnisses durch.
+Können Projektmitarbeiter, Fachexperten oder andere Stakeholder sein.
+Reviewleiter:
+
+Trägt die Gesamtverantwortung für das Review.
+Entscheidet über die Teilnehmer und organisiert Zeitpunkt und Ort des Reviews.
+Hinweis: Weitere detaillierte Rollen sind möglich, wie in der Norm ISO/IEC 20246 beschrieben.
+
+Kurze Zusammenfassung in Stichpunkten:
+
+3.2.4 Arten von Reviews:
+
+Informelles Review:
+	Merkmale:
+		Kein definierter Prozess.
+		Keine formalen Ergebnisse.
+	Ziel:
+		Schnelles Aufdecken von Anomalien und Fehlern.
+Walkthrough:
+	Merkmale:
+		Vom Autor geleitet.
+		Individuelles Review der Gutachter optional.
+	Ziele:
+		Qualitätsbewertung.
+		Schulung der Gutachter.
+		Konsensfindung.
+		Motivation des Autors.
+		Aufdecken von Anomalien.
+Technisches Review:
+	Merkmale:
+		Von technisch qualifizierten Gutachtern durchgeführt.
+		Moderiert durch einen Moderator.
+	Ziele:
+		Technische Entscheidungsfindung.
+		Aufdecken von Anomalien.
+		Verbesserungsvorschläge für den Autor.
+Inspektion:
+	Merkmale:
+		Formalste Art des Reviews.
+		Festgelegter Prozess mit Metrikenerfassung.
+		Autor ist nicht Reviewleiter oder Protokollant.
+	Ziele:
+		Finden maximaler Anomalien.
+		Qualitätsbewertung.
+		Prozessverbesserung basierend auf Erkenntnissen.
+		Auswahl der Review-Art abhängig von:
+
+Review-Ziele: Gewünschte Ergebnisse des Reviews.
+Projektbedarf und Ressourcen: Verfügbare Zeit und Personal.
+Art und Risiken des Arbeitsergebnisses: Komplexität und Kritikalität.
+Unternehmensbereich und Kultur: Branchenstandards und interne Prozesse.
+Hinweise:
+
+Kombination von Review-Arten: Ein Arbeitsergebnis kann mehrfach mit unterschiedlichen Review-Arten geprüft werden.
+Zielgerichtete Anwendung: Die richtige Auswahl des Review-Typs ist entscheidend für den Erfolg des Reviews.
+
+3.2.5 Erfolgsfaktoren für Reviews
+
+Klare Ziele und messbare Endekriterien festlegen
+
+Ziele des Reviews deutlich definieren
+Teilnehmerbewertung sollte nie ein Ziel sein
+Geeignete Review-Art auswählen
+
+Passend zu Zielen, Arbeitsergebnis, Teilnehmern, Projektanforderungen und Kontext
+Reviews in kleinen Einheiten durchführen
+
+Verhindert Konzentrationsverlust bei Gutachtern während individueller Reviews oder Sitzungen
+Feedback an Stakeholder und Autoren liefern
+
+Unterstützung bei der Verbesserung des Produkts und der Aktivitäten
+Ausreichend Vorbereitungszeit bereitstellen
+
+Teilnehmer können sich angemessen auf das Review vorbereiten
+Unterstützung des Reviewprozesses durch das Management
+
+Management fördert und unterstützt den Prozess aktiv
+Reviews in Prozessverbesserung einbeziehen
+
+Nutzung von Reviews zur Förderung der kontinuierlichen Prozessverbesserung
+Geeignete Schulungen für alle Teilnehmer anbieten
+
+Teilnehmer kennen ihre Rollen und wissen, wie sie diese erfüllen können
+Moderation der Sitzungen
+
+Effektive Leitung der Reviewsitzungen durch einen Moderator
+
+S. 44 - bis S 46 -> 10.00
+S. 46 - bis 49 bis 10.40
+
+4. Testanalyse und -entwurf
+
+4.1 Testverfahren im Überblick
+
+4.1.1 
+Black-Box-Testverfahren, 
+White-Box-Testverfahren und 
+Erfahrungsbasierte Testverfahren
+
+was soll wie gestestet werden (Analyse und Entwurf)
+
+Blackbox: von aussen ohne kenntnis der internen Struktur nach spezifikationen
+Whitebox: basieren auf der analyse der internen Struktur
+Erfahrungsbasiert: nach den erfahrungen des Teams oder des Testers, sollte ergänzent zu den anderen verfahren sein.
+
+4.2 Black-Box-Testverfahren
+
+4.2.1 Äquivalenzklassenbildung:
+Test aus werten oder einem Wert der mindestens jedes Artifakt im code Anspricht.
+
+4.2.2 Grenzwertanalyse:
+nur bei geordneten daten, 2 wert oder 3 wert mit je anfang und ende und anfang mitte ende
+
+4.2.3 Entscheidungstabellentest:
+Eine tabelle als entwurf zum test aller bedingungen und entscheidungswege des systems
+
+4.2.4 Zustandsübergangstest:
+Test des Status des Systems, bei einem ereignis oder aktion soll sich der status ändern oder nicht es gibt also zustände, ereignisse und übergänge
+
+4.3
+White-Box-Testverfahren
+
+4.3.1  Anweisungstest
+jede anweisung sollte ein mal ausgeführt werden, bedeutet aber das immer noch fehlerzustände aufkommen können die zb datenabhänging sind
+
+4.3.2  Zweigtest 
+testet die verzweigungen im system if/swich, eine vollständige zweigüberdeckung bedutet auch eine vollständige anweisungsüberdeckung
+
+4.3.3  den Wert des White-Box-Tests
+ist allein für das vertrauen im code da stellt aber die anforderungen an das system nicht da.
+kann fürs statische testen benutzt (dry run) und sind gut für code reviews.
+
+4.4
+Erfahrungsbasierter Test
+
+4.4.1  intuitive Testfallermittlung
+basiert auf erfahrungen und wissen aus der vergangenheit des testers
+funktion der anwendung in der vergangenheit, zu welchen fehlern neigen die entwickler, fehlertypen aus änlichen anwendungen.
+
+4.4.2  explorativen Test
+das testobjekt wird mit den test erforscht und ist ehr eine testsitzung um erfahrungen zu sammeln und daraus test abzuleiten
+
+4.4.3 checklistenbasierten Test
+sind annahmen aus erfahrungen (usecases, grenzwerte ...) die in der vergangenheit wichtig waren oder sein könnten
+
+4.5
+Auf Zusammenarbeit basierende Testansätze
+Testet die fehlerzustände der zusammenarbeit und kommunikation
+
+4.5.1 das Schreiben von User Storys in Zusammenarbeit mit Entwicklern und
+Fachvertretern
+eine userstory stellt ein feature der anwendung da, 
+(3c's) 
+( card, conversation, confirmation)
+(beschreibung, erklärung der benutzung, abnahmenkriterien)
+bilde einen satz beim brainstorm oder mindmap
+
+4.5.2 die verschiedenen Möglichkeiten zum Schreiben von Abnahmekriterien
+abnahmekriterien werden diskutiert und bilden den umfang, einen konsens, positive negative senarien, dienen als basis für abnahmetest, für eine genaue plaung und schätzung
+
+fromate sind szenario oder regelorientiert
+
+•Szenario-orientiert (z. B. das Gegeben/Wenn/Dann-Format, das in der
+verhaltensgetriebenen Entwicklung (BDD) verwendet wird, siehe Abschnitt 2.1.3)
+•Regelorientiert (z. B. Verifizierungsliste mit Aufzählungspunkten oder tabellarische
+Form der Input-Output-Zuordnung)
+
+4.5.3 abnahmetestgetriebene Entwicklung (ATDD) zur Ableitung von Testfällen
+wie tdd blos das hier schon im vorraus die userstorys erstellt und getestet werden um darauf dann die anwendung und systeme zu bilden, dazu gehören positiv wie negativ test und funktionale und nicht funktionale test. 
+aus den userstorys gebildeten abnnahmetest werden zu ausführbaren anforderungen.
+
+
+5.1 Testplanung
+5.1.1 Beispiele zu Zweck und Inhalt eines Testkonzepts
+testkonzept beschreibt die ziele, ressourcen, prozesse für ein testobjekt
+was brauch ich zum testen und wieviel zeit beansprucht es
+sicherstellen der durchführung von kriterien
+mittel zu kommunikation das aufzeigt ob sich an bestehende testrichtlinie udn strategie hält oder auch nicht
+
+beinhaltet den kontext des testens, annahmen und einschränkungen, die stakeholder, kommunikation, risikoverzeichnis, testansatz, budget und zeitplan
+
+5.1.2 den möglichen Mehrwert, den ein Tester für die Iterations- und
+Releaseplanung schafft
+releaseplanung beschreibt eine testplanung zum release der anwendung
+iterationsplanung beschreibt eine testplanung zu jeder änderung der anwendung bei der  entwicklung
+
+5.1.3 Eingangskriterien und Endekriterien vergleichen und gegenüberstellen
+ein und ausgangskriterien sollten für jede teststufe  definiert werden und können ressourcen, testmittel sein, endkriterien können die ergebnisse und daten aus test sein wie überdeckungsgrad, ungelöste fehlerzustände wieviel test wurden ausgeführt, wurden alle regressionstest ausgeführt
+die endkriterien sind in agile die definition of done
+
+5.1.4 Schätzverfahren zur Berechnung des erforderlichen Testaufwands
+Schätzung basierend auf Verhältniszahlen: basiert auf vorangegangenden projecten und kan von denen abgeleitet werden. verhältnisse zueinandern können auf das neue projekt angewand werden
+Extrapolation:
+es werden daten gesammelt und darauf die zukunft extrapoliert um darzustellen wohin es zeigt
+Breitband-Delphi:
+expertenbasiert auf erfahrungen wird ein konsens gebildet iterativ wir allein die schätzung angeglichen
+Drei-Punkt-Schätzung:
+berechnung der schätzung aus dem (a)optimistischen (m)wahrscheinlichsten und (b)pessimistischen schätzung mit E = (a + 4*m + b) / 6. SD = (b - a) / 6 == E+-SD
+
+Wenn zum Beispiel die Schätzungen (in Personenstunden)
+a=6, m=9 und b=18 sind, dann liegt die endgültige Schätzung bei 10±2 Personenstunden (d. h. zwischen 8 und 12 Personenstunden), weil E = (6 + 4*9 + 18) / 6 = 10 und SD = (18 - 6)
+/ 6 = 2.
+
+5.1.5 Priorisierung von Testfällen anwenden
+Riskobasiert (Sicherheit, Kosten)
+Überdeckungsbasiert 1/n oder n/1 (Technisch)
+Anforderungsbasiert (Stackeholder)
+
+es muß unbendingt auf die gegebene Ressourcen gechtet werden was man wann und wie testet
+
+5.1.6 die Konzepte der Testpyramide wiedergeben
+
+unten sind einfache und schnelle test weiter oben komplexe und langsame test diese einteilung dient dazu die ausführungshäufigkeit und resourcenverbrauch aufzuzeigen und die tests dementsprechend einzuteilen
+
+5.1.7 die Testquadranten und ihre Beziehungen zu Teststufen und Testarten
+zusammenfassen
+
+Das Testquadranten-Modell hilft dabei, verschiedene Arten von Tests zu ordnen. Es teilt die Tests in vier Gruppen ein, je nachdem, ob sie eher der Technik oder den Benutzern dienen und ob sie das Team unterstützen oder das Produkt überprüfen.
+
+5.2 Risikomanagement
+Risikobasiertes Testen bedeutet, dass man Testaktivitäten nach einer Risikoanalyse auswählt und priorisiert, um die größten Gefahren für das Projekt zuerst zu überprüfen. So können Organisationen sicherstellen, dass sie ihre Ziele besser erreichen und die Qualität der Produkte verbessern.
+
+FL-5.2.1 (K1) ... die Risikostufe anhand der Eintrittswahrscheinlichkeit des Risikos und des
+Schadensausmaßes des Risikos identifizieren
+Ein Risiko ist etwas, das passieren könnte und negative Folgen hat. Es wird durch die Wahrscheinlichkeit, dass es eintritt, und die Schwere der Folgen bestimmt. Je größer diese beiden Faktoren sind, desto dringender muss man sich um das Risiko kümmern.
+
+FL-5.2.2 (K2) ... zwischen Projektrisiken und Produktrisiken unterscheiden
+Beim Testen von Software gibt es zwei Hauptarten von Risiken: Projekt-risiken und Produkt-risiken.
+
+Projekt-risiken betreffen das Management des Projekts, wie Verzögerungen, fehlendes Personal oder technische Probleme. Diese können den Zeitplan, das Budget oder den Umfang des Projekts beeinflussen.
+Produkt-risiken betreffen die Qualität der Software, wie fehlerhafte Funktionen, schlechte Leistung oder Sicherheitslücken. Diese können zu Benutzerunzufriedenheit, Einnahmeverlusten oder sogar rechtlichen Konsequenzen führen.
+
+FL-5.2.3 (K2) ... den möglichen Einfluss der Produktrisikoanalyse auf Intensität und Umfang
+des Testens erklären
+Das Ziel der Produktrisikoanalyse beim Testen ist es, Risiken zu erkennen und zu bewerten, um den Testaufwand auf die kritischsten Bereiche zu fokussieren und die Risikostufe des Produkts zu minimieren. Durch eine frühzeitige Identifizierung und Bewertung von Risiken können Maßnahmen wie Testpriorisierung und Testmethoden festgelegt werden, um sicherzustellen, dass potenzielle Probleme frühzeitig entdeckt und behandelt werden.
+
+FL-5.2.4 (K2) ... mögliche Maßnahmen, die als Reaktion auf analysierte Produktrisiken
+ergriffen werden können, erklären
+
+Die **Steuerung von Produktrisiken** umfasst Maßnahmen zur Reduzierung und Überwachung der Risiken. Die **Risikominderung** setzt die vorgeschlagenen Maßnahmen um, um die Risikostufe zu senken, während die **Risikoüberwachung** sicherstellt, dass diese Maßnahmen effektiv sind und neue Risiken erkannt werden. 
+Es gibt verschiedene Reaktionen auf Risiken, wie Risikominderung durch Testen, Risikoakzeptanz oder Notfallpläne. Um Risiken durch Testen zu verringern, können beispielsweise erfahrene Tester ausgewählt, unabhängige Tests durchgeführt und geeignete Testmethoden angewendet werden.
+
+5.3
+Testüberwachung, Teststeuerung und Testabschluss
+Bei der **Testüberwachung** geht es darum, Informationen über den Testfortschritt zu sammeln, um zu prüfen, ob die festgelegten Testziele erreicht wurden. Diese Daten helfen dabei, zu bewerten, ob Kriterien wie Risikodeckung oder Abnahmeanforderungen erfüllt sind. Die **Teststeuerung** nutzt diese Informationen, um notwendige Anpassungen vorzunehmen, wie z. B. das Neupriorisieren von Tests oder das Anpassen des Zeitplans. Am **Testabschluss** werden die gesammelten Daten genutzt, um Erfahrungen und Informationen für zukünftige Projekte zu sichern.
+
+FL-5.3.1 (K1) ... die beim Testen verwendeten Metriken wiedergeben
+Beim Testen werden verschiedene **Metriken** verwendet, um den Fortschritt, die Qualität und die Effektivität der Tests zu überwachen. Zu den gängigen Metriken gehören:
+
+- **Projektfortschritt** (z. B. Ressourcenverbrauch, Testaufwand)
+- **Testfortschritt** (z. B. ausgeführte/nicht ausgeführte Testfälle, bestandene/nicht bestandene Testfälle)
+- **Produktqualität** (z. B. Verfügbarkeit, Reaktionszeit, MTTF)
+- **Fehlerzustände** (z. B. Anzahl und Prioritäten gefundener/behobener Fehler, Fehlerdichte)
+- **Risiken** (z. B. verbleibende Risikostufe)
+- **Überdeckung** (z. B. Anforderungs- oder Codeüberdeckung)
+- **Kosten** (z. B. Kosten des Testens)
+
+FL-5.3.2 (K2) ... Zweck, Inhalt und Zielgruppen von Testberichten zusammenfassen
+Der **Zweck eines Testberichts** besteht darin, Informationen über die Testaktivitäten zu sammeln und an die Stakeholder zu kommunizieren. Testfortschrittsberichte dienen der **laufenden Teststeuerung** und helfen dabei, den Testplan anzupassen, falls nötig. Sie enthalten Daten zum Testfortschritt, Hindernisse, Metriken und geplante Tests. **Testabschlussberichte** fassen eine Testphase zusammen, bewerten die Testqualität, listen Abweichungen vom Plan auf und enthalten Erkenntnisse für zukünftige Tests. Unterschiedliche Zielgruppen (z. B. Teammitglieder oder Projektleiter) beeinflussen die Art und Häufigkeit der Berichterstattung.
+
+FL-5.3.3 (K2) ... Beispiele geben, wie man den Teststatus kommunizieren kann
+Der **Teststatus** kann auf verschiedene Arten kommuniziert werden, abhängig von den Bedürfnissen und Gegebenheiten des Projekts. Beispiele sind:
+
+- **Mündliche Kommunikation**: Direkte Gespräche mit Teammitgliedern und Stakeholdern.
+- **Dashboards**: Verwendung von CI/CD-Dashboards, Taskboards oder Burn-Down-Charts zur Visualisierung des Fortschritts.
+- **Elektronische Kanäle**: E-Mail oder Chat für schnelle Updates.
+- **Online-Dokumentation**: Gemeinsame Dokumentation, die jederzeit abrufbar ist.
+- **Formale Testberichte**: Für eine umfassende und strukturierte Zusammenfassung des Teststatus.
+
+Die Methode sollte an die Bedürfnisse der Stakeholder angepasst werden, insbesondere bei verteilten Teams.
+
+5.4 Konfigurationsmanagement
+
+FL-5.4.1 (K2) ... mögliche Unterstützung des Testens durch das Konfigurationsmanagement
+zusammenfassen
+Beim Testen hilft das **Konfigurationsmanagement (KM)** dabei, Arbeitsergebnisse wie Testfälle, Testskripte oder Testergebnisse als Konfigurationselemente zu identifizieren, zu steuern und zu verfolgen. 
+Es sorgt dafür, dass alle Elemente eindeutig identifiziert, versionskontrolliert und bei Änderungen überwacht werden. Wenn eine **Baseline** erstellt wird, kann diese nur durch einen formalen Änderungsprozess angepasst werden, und frühere Versionen sind reproduzierbar. KM stellt sicher, dass alle Testelemente und Dokumentationen korrekt referenziert und nachverfolgbar sind, was insbesondere in **automatisierten DevOps-Umgebungen** wichtig ist.
+
+5.5 Fehlermanagement
+FL-5.5.1 (K3) ... einen Fehlerbericht erstellen
+Der Fehlermanagementprozess ist wichtig, um Anomalien, wie Fehlerzustände oder andere Abweichungen, effektiv zu behandeln und zu verfolgen. 
+Der Prozess umfasst die Protokollierung, Analyse, Klassifizierung und Entscheidung, ob die Anomalie behoben wird oder nicht, sowie die Schließung des Fehlerberichts. 
+Ein typischer Fehlerbericht enthält Informationen wie eine eindeutige Kennung, eine Beschreibung des Fehlers, den Kontext (z. B. Testfall, Testumgebung), erwartete und tatsächliche Ergebnisse, Schweregrad, Priorität und den Status des Fehlers. Diese Berichte helfen, die Qualität des Produkts zu überwachen und den Entwicklungsprozess zu verbessern.
+
+6.1
+Werkzeugunterstützung für das Testen
+FL-6.1.1 (K2) ... mögliche Unterstützung des Testens durch verschiedene Arten von
+Testwerkzeugen erklären
+**Testwerkzeuge** unterstützen viele Testaktivitäten und erhöhen die Effizienz des gesamten Prozesses. Hier einige Beispiele:
+
+- **Managementwerkzeuge**: Helfen bei der Verwaltung des SDLC, der Anforderungen, Tests, Fehlerzustände und Konfiguration.
+- **Werkzeuge für statische Tests**: Unterstützen Reviews und statische Analysen.
+- **Werkzeuge für Testentwurf und -realisierung**: Erleichtern die Erstellung von Testfällen und Testdaten.
+- **Werkzeuge zur Testdurchführung und -überdeckung**: Automatisieren Tests und messen die Testabdeckung.
+- **Werkzeuge für nicht-funktionale Tests**: Ermöglichen Tests, die manuell schwer durchführbar sind, wie Leistungstests.
+- **DevOps-Werkzeuge**: Unterstützen die automatisierte Build-Pipeline und CI/CD.
+- **Zusammenarbeitswerkzeuge**: Erleichtern die Kommunikation im Team.
+- **Werkzeuge zur Skalierbarkeit und Bereitstellung**: Wie virtuelle Maschinen oder Container-Tools.
+
+Sogar einfache Programme wie Tabellenkalkulationen können als Testwerkzeuge genutzt werden, wenn sie den Testprozess unterstützen.
+
+6.2
+Nutzen und Risiken von Testautomatisierung
+FL-6.2.1 (K1) ... die Nutzen und Risiken von Testautomatisierung wiedergeben
+
+Die **Anschaffung eines Testwerkzeugs** allein garantiert keinen Erfolg. Es erfordert Aufwand für **Einführung, Wartung und Schulung** und birgt Risiken, die beachtet werden müssen. 
+
+**Potenzielle Vorteile der Testautomatisierung**:
+- **Zeitersparnis** durch Automatisierung sich wiederholender Aufgaben (z. B. Regressionstests).
+- **Vermeidung menschlicher Fehler** durch Konsistenz und Wiederholbarkeit.
+- **Objektivere Bewertung** von Metriken, die manuell schwer zu erheben sind.
+- **Bessere Informationen** für Testmanagement und Berichte (z. B. Statistiken, Fortschrittsdaten).
+- **Schnellere Fehlererkennung** und Rückmeldungen.
+- **Mehr Zeit** für das Design neuer Tests.
+
+**Potenzielle Risiken der Testautomatisierung**:
+- **Unrealistische Erwartungen** bezüglich der Vorteile und Handhabung des Werkzeugs.
+- **Fehlkalkulationen** von Kosten, Zeit und Aufwand.
+- **Werkzeugverwendung**, wenn manuelles Testen besser wäre.
+- **Übermäßiges Vertrauen** in das Werkzeug, ohne kritisches menschliches Denken.
+- **Abhängigkeit vom Anbieter** oder Open-Source-Lösungen, die möglicherweise nicht weiterentwickelt werden.
+- **Inkompatibilität** mit der Entwicklungsplattform.
+- Wahl eines **ungeeigneten Werkzeugs**, das den Standards nicht entspricht.

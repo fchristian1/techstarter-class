@@ -1,0 +1,38 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "license": "AGPL-version-3.0",
+  "private": false,
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": ">= 6.0.0"
+  },
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": "",
+  "keywords": [],
+  "author": {
+    "name": "",
+    "email": "",
+    "url": ""
+  },
+  "contributors": [],
+  "scripts": {
+    "docker:build": "docker build -t node-app .",
+    "docker:run": "docker run -d -p 5000:3000 --name node-container node-app",
+    "docker:test": "echo $(curl -X GET http://localhost:5000)",
+    "docker:stop": "docker stop node-container",
+    "docker:rm": "docker rm node-container",
+    "docker:up": "npm run docker:build && npm run docker:run && sleep 1 && npm run docker:test",
+    "docker:down": "npm run docker:stop && npm run docker:rm"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

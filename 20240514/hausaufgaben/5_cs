@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Author:Christian Fröchtenicht fc1(at)gmx.net
+# License: MIT
+# Version: 1.0.0
+# CreateDate: 20240514 ISO
+# EditDate: 20240514 ISO
+# Name: 5_cs - check service
+# Description: check a service and print out the status
+
+name="systemd-resolved.service"
+status=$(systemctl status $name | grep "Active:" | awk '{print $2}')
+echo "Status from $name is: $status"
+

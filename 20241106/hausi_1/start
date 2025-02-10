@@ -1,0 +1,8 @@
+#!/bin/bash
+echo "Starting Hausi"
+cd backend/
+npm i
+cd ../frontend/
+npm i
+(cd ../backend/ && npm run start) &
+(cd ../frontend/ && npm run dev)

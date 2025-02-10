@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Postings</title>
+    <style>
+      ul {
+        list-style-type: none;
+      }
+
+      .border-left-1 {
+        border-left: 1px solid black;
+        padding-left: 10px;
+      }
+      .border-bottom-1 {
+        border-bottom: 1px solid black;
+      }
+      .border-color-light {
+        border-color: lightgray;
+      }
+      .ml-40 {
+        margin-left: 40px;
+      }
+      .pl-10 {
+        padding-left: 10px;
+      }
+      .pr-10 {
+        padding-right: 10px;
+      }
+      .flex {
+        display: flex;
+      }
+      .col {
+        flex-direction: column;
+      }
+      .row {
+        flex-direction: row;
+      }
+      .center {
+        justify-content: center;
+        align-items: center;
+      }
+      .w600 {
+        width: 600px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav><a href="#">Post-it</a></nav>
+    <div class="flex col center">
+      <main class="flex col w600">
+        <div><h1 class="ml-40 pl-10 border-left-1 border-color-light">post-ings</h1></div>
+        <div class="border-bottom-1 border-color-light"></div>
+        <div>
+          <ul id="posting-list"></ul>
+        </div>
+      </main>
+    </div>
+    <div class="border-bottom-1 border-color-light"></div>
+    <footer>
+      <p>
+        <a href="#">inpressum</a>
+        <a href="#">contact</a>
+      </p>
+    </footer>
+  </body>
+  <script>
+    const postingList = document.getElementById("posting-list");
+    async function renderData(data) {
+      data.forEach((element) => {
+        let postingBlock = `
+        <li class="border-left-1 border-color-light pl-10 pr-10" id="${element.id}">
+            <h4>${element.title}</h4>
+            <div>${element.body}</div>
+        </li>`;
+        postingList.innerHTML += postingBlock;
+      });
+    }
+
+    function getData() {
+      fetch("https://jsonplaceholder.typicode.com/posts")
+        .then((response) => response.json())
+        .then(renderData);
+    }
+
+    getData();
+  </script>
+</html>

@@ -1,0 +1,22 @@
+services:
+  frontend:
+    build:
+      context: ./frontend/
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    networks:
+      - todo
+    depends_on:
+      - backend
+  backend:
+    build:
+      context: ./api/
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    networks:
+      - todo
+networks:
+  todo:
+    driver: bridge

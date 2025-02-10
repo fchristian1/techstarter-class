@@ -1,0 +1,38 @@
+---> 2025-01-07T13:52:09.272Z - 97ede34aee48449988304422d0706d78 - GET /math?a=0&b=0&operator=divide 
+<--- 2025-01-07T13:52:09.275Z - 97ede34aee48449988304422d0706d78 - 3ms - GET /math?a=0&b=0&operator=divide 500  
+---> 2025-01-07T13:52:51.764Z - c4a4a1911e2d438183e2ea38d089ffb2 - GET /math?a=0&b=0&operator=divide 
+<--- 2025-01-07T13:52:51.766Z - c4a4a1911e2d438183e2ea38d089ffb2 - GET /math?a=0&b=0&operator=divide 500 - (2ms)
+---> 2025-01-07T13:53:16.936Z - f4e9e0c9b3cf4f0ea21646c0cf40c600 - GET / 
+<--- 2025-01-07T13:53:16.937Z - f4e9e0c9b3cf4f0ea21646c0cf40c600 - GET / 200 - (1ms)
+---> 2025-01-07T13:53:23.470Z - a9eab404ab6445818ec12d146a4fe46b - GET / 
+<--- 2025-01-07T13:53:23.471Z - a9eab404ab6445818ec12d146a4fe46b - GET / 200 - (1ms)
+---> 2025-01-07T13:53:24.248Z - 54824eae3e4a46de9772e9f0ef7f0d7e - GET / 
+<--- 2025-01-07T13:53:24.248Z - 54824eae3e4a46de9772e9f0ef7f0d7e - GET / 200 - (0ms)
+---> 2025-01-07T13:53:24.632Z - d83aa1768c9948349b3bb4c25863e368 - GET / 
+<--- 2025-01-07T13:53:24.633Z - d83aa1768c9948349b3bb4c25863e368 - GET / 200 - (1ms)
+---> 2025-01-07T13:53:24.811Z - 5ba1a83b7430459fb81246ca6d3568c5 - GET / 
+<--- 2025-01-07T13:53:24.811Z - 5ba1a83b7430459fb81246ca6d3568c5 - GET / 200 - (0ms)
+---> 2025-01-07T13:53:25.214Z - b33a4a0cd7bf4508b4482e5d2129f310 - GET / 
+<--- 2025-01-07T13:53:25.214Z - b33a4a0cd7bf4508b4482e5d2129f310 - GET / 200 - (0ms)
+---> 2025-01-07T13:53:25.543Z - fb433ac4374d42a88556d538ec8db6b1 - GET / 
+<--- 2025-01-07T13:53:25.544Z - fb433ac4374d42a88556d538ec8db6b1 - GET / 200 - (1ms)
+---> 2025-01-07T13:53:27.763Z - 0ccc3f01c0334de68699b8614cd68946 - GET /math?a=0&b=0&operator=divide 
+<--- 2025-01-07T13:53:27.764Z - 0ccc3f01c0334de68699b8614cd68946 - GET /math?a=0&b=0&operator=divide 500 - (1ms)
+---> 2025-01-07T13:53:28.167Z - d63278e7ba9a40a894ddc6ff1ed90b6f - GET /math?a=0&b=0&operator=divide 
+<--- 2025-01-07T13:53:28.168Z - d63278e7ba9a40a894ddc6ff1ed90b6f - GET /math?a=0&b=0&operator=divide 500 - (1ms)
+---> 2025-01-07T13:53:28.577Z - c22e3ee2fd3c45b48b44b8c230399b4d - GET /math?a=0&b=0&operator=divide 
+<--- 2025-01-07T13:53:28.578Z - c22e3ee2fd3c45b48b44b8c230399b4d - GET /math?a=0&b=0&operator=divide 500 - (1ms)
+---> 2025-01-07T13:53:28.940Z - 02863dbcfa9c4a5aa5bc6ae12db44f10 - GET /math?a=0&b=0&operator=divide 
+<--- 2025-01-07T13:53:28.940Z - 02863dbcfa9c4a5aa5bc6ae12db44f10 - GET /math?a=0&b=0&operator=divide 500 - (1ms)
+---> 2025-01-07T13:53:29.101Z - b02ba04e0ef949f78389c28b76efff96 - GET /math?a=0&b=0&operator=divide 
+<--- 2025-01-07T13:53:29.102Z - b02ba04e0ef949f78389c28b76efff96 - GET /math?a=0&b=0&operator=divide 500 - (1ms)
+---> 2025-01-07T13:53:29.270Z - 0eb2bd5020fe4cc885039f14daa0f5b2 - GET /math?a=0&b=0&operator=divide 
+<--- 2025-01-07T13:53:29.271Z - 0eb2bd5020fe4cc885039f14daa0f5b2 - GET /math?a=0&b=0&operator=divide 500 - (1ms)
+---> 2025-01-07T13:53:29.448Z - 10c0d24133b04a688f04850ffb7f9287 - GET /math?a=0&b=0&operator=divide 
+<--- 2025-01-07T13:53:29.449Z - 10c0d24133b04a688f04850ffb7f9287 - GET /math?a=0&b=0&operator=divide 500 - (1ms)
+---> 2025-01-07T13:53:29.634Z - a6baf9e3f8f549b1b6651e1e680e99c0 - GET /math?a=0&b=0&operator=divide 
+<--- 2025-01-07T13:53:29.635Z - a6baf9e3f8f549b1b6651e1e680e99c0 - GET /math?a=0&b=0&operator=divide 500 - (1ms)
+---> 2025-01-07T13:53:29.788Z - 8e9482326dc34d41832d2446d30d3192 - GET /math?a=0&b=0&operator=divide 
+<--- 2025-01-07T13:53:29.788Z - 8e9482326dc34d41832d2446d30d3192 - GET /math?a=0&b=0&operator=divide 500 - (0ms)
+---> 2025-01-07T13:55:26.976Z - 3bfbc528126943f99bfb96bd4952e012 - GET /test500 
+<--- 2025-01-07T13:55:26.978Z - 3bfbc528126943f99bfb96bd4952e012 - GET /test500 500 - (2ms)

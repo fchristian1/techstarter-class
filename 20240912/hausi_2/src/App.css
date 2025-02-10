@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+button {
+    cursor: pointer;
+    padding: 0 5px;
+}
+.flex {
+    display: flex;
+}
+.row {
+    flex-direction: row;
+}
+.col {
+    flex-direction: column;
+}
+.border {
+    border: 1px solid rgb(141, 141, 141);
+}
+.w-100 {
+    width: 100%;
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid rgb(141, 141, 141);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+.card-body {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+.card-footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid rgb(141, 141, 141);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+.center {
+    text-align: center;
+}

@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      component: client
+  template:
+    metadata:
+      labels:
+        component: client
+    spec:
+      containers:
+        - name: client
+          image: fchristian1/k8sclient
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+          ports:
+            - containerPort: 8080
+          env:
+            - name: VUE_APP_API_URL
+              value: /api

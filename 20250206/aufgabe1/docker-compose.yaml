@@ -1,0 +1,39 @@
+version: "3.8"
+
+services:
+    frontend:
+        image: "fchristian1/frontend_aufgabe1:latest"
+        ports:
+            - "8080:80"
+        depends_on:
+            - backend
+
+    backend:
+        image: "fchristian1/backend_aufgabe1:latest"
+        ports:
+            - "3000:3000"
+        depends_on:
+            - postgres
+        environment:
+            DATABASE_URL: "postgres://myuser:mypassword@postgres:5432/mydb"
+
+    postgres:
+        image: "postgres:latest"
+        secrets:
+            - POSTGRES_USER
+            - POSTGRES_PASSWORD
+        environment:
+            POSTGRES_DB: mydb
+            POSTGRES_HOST: postgres
+            POSTGRES_PORT: 5432
+            POSTGRES_USER: myuser
+            POSTGRES_PASSWORD: mypassword
+
+        ports:
+            - "5432:5432"
+
+secrets:
+    POSTGRES_USER:
+        file: ./postgres_user.txt
+    POSTGRES_PASSWORD:
+        file: ./postgres_password.txt

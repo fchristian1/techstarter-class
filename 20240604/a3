@@ -1,0 +1,20 @@
+#!/usr/bin/python3
+
+# Author:Christian Fröchtenicht fc1(at)gmx.net
+# License: MIT
+# Version: 1.0.0
+# CreateDate: 20240604-111212 ISO
+# EditDate: 20240604-111212 ISO
+# Name: a3.py
+# Description: ---
+
+string=input("gebe einen Text ein:\n")
+vergleich= ["A","a","E","e","I","i","O","o","U","u"]
+count=0
+
+for c in string:
+    for v in vergleich:
+        if c == v:
+            count+= 1
+
+print("Anzahl der Vokale ist: " + str(count))

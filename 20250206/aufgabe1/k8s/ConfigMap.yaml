@@ -1,0 +1,90 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: frontend-config
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html lang="de">
+        <head>
+            <meta charset="UTF-8" />
+            <title>Kubernetes App</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    padding: 20px;
+                }
+                ul {
+                    list-style: none;
+                    padding: 0;
+                }
+                li {
+                    background: #f4f4f4;
+                    padding: 8px;
+                    margin: 5px 0;
+                }
+                input,
+                button {
+                    padding: 10px;
+                    margin-top: 10px;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>API-Daten</h1>
+            <ul id="data"></ul>
+            <input id="name" type="text" placeholder="Neuer Eintrag" />
+            <button id="addButton">Hinzufügen</button>
+            <p id="error" style="color: red"></p>
+
+            <script>
+                const apiUrl = "/api/data";
+                const fallbackUrl = "http://localhost:3000/api/data";
+
+                async function fetchWithFallback(url, options = {}) {
+                    try {
+                        const res = await fetch(url, options);
+                        if (!res.ok) throw new Error("Fehler beim Abrufen/Speichern der Daten");
+                        return await res.json();
+                    } catch (error) {
+                        console.warn(`Fehler mit ${url}, versuche Fallback...`);
+                        try {
+                            const fallbackRes = await fetch(fallbackUrl, options);
+                            if (!fallbackRes.ok) throw new Error("Fehler beim Abrufen/Speichern über Fallback");
+                            return await fallbackRes.json();
+                        } catch (fallbackError) {
+                            console.error(fallbackError);
+                            document.getElementById("error").textContent = "Daten konnten nicht geladen oder gespeichert werden.";
+                            return [];
+                        }
+                    }
+                }
+
+                async function loadData() {
+                    const items = await fetchWithFallback(apiUrl);
+                    document.getElementById("data").innerHTML = items.map((i) => `<li>${i.name}</li>`).join("");
+                }
+
+                async function addData() {
+                    const name = document.getElementById("name").value.trim();
+                    if (!name) {
+                        document.getElementById("error").textContent = "Bitte einen Namen eingeben.";
+                        return;
+                    }
+
+                    await fetchWithFallback(apiUrl, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ name }),
+                    });
+
+                    document.getElementById("name").value = "";
+                    document.getElementById("error").textContent = "";
+                    loadData();
+                }
+
+                document.getElementById("addButton").addEventListener("click", addData);
+                loadData();
+            </script>
+        </body>
+    </html>

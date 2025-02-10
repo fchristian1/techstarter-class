@@ -1,0 +1,14 @@
+#!/usr/bin/python3
+
+# Author:Christian Fröchtenicht fc1(at)gmx.net
+# License: MIT
+# Version: 1.0.0
+# CreateDate: 20240604-111919 ISO
+# EditDate: 20240604-111919 ISO
+# Name: a5
+# Description: ---
+
+string=input("gebe text ein:\n")
+teiler=input("benenne den teiler zum aufteilen:\n")
+for s in string.split(teiler):
+    print(s)

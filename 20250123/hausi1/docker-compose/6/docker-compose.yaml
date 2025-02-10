@@ -1,0 +1,11 @@
+services:
+  customNginx:
+    build:
+      context: .
+      dockerfile: nginx/Dockerfile_nginx
+    image: fchristian1/custom_nginx_dockerlabs:v1
+  customHttp:
+    build:
+      context: .
+      dockerfile: httpd/Dockerfile_httpd
+    image: fchristian1/custom_http_dockerlabs:v1

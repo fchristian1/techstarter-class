@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Author:Christian Fröchtenicht fc1(at)gmx.net
+# License: MIT
+# Version: 1.0.0
+# CreateDate: 20240514 ISO
+# EditDate: 20240514 ISO
+# Name: 6_cf
+# Description: check the arguments as existing files and print out the check
+
+if [ $# -eq 0 ]; then
+	echo "expect one argument"
+fi
+for file in $@; do
+	if [ -f $file ]; then
+		echo "$file ok"
+	else
+		echo "$file not exist"
+	fi
+done
+
+

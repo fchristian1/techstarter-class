@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 400;
+      }
+
+      a {
+        color: orangered;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      a:hover {
+        color: darkred;
+      }
+      a:active {
+        color: orangered;
+      }
+      a:visited {
+        color: orangered;
+      }
+
+      .flex {
+        display: flex;
+      }
+
+      .row {
+        flex-direction: row;
+      }
+
+      .column {
+        flex-direction: column;
+      }
+
+      .center {
+        justify-content: center;
+        align-items: center;
+      }
+
+      .border {
+        border: 1px solid black;
+      }
+
+      .border-round {
+        border-radius: 5px;
+      }
+
+      .w-600 {
+        width: 400px;
+      }
+
+      .mt-10 {
+        margin-top: 10px;
+      }
+      .p-10 {
+        padding: 10px;
+      }
+      .px-3 {
+        padding: 3px;
+      }
+      .gap-10 {
+        gap: 10px;
+      }
+      .w100 {
+        width: 100%;
+      }
+      .f600 {
+        font-weight: 600;
+      }
+      .tc {
+        text-align: center;
+      }
+      ul {
+        list-style-type: "🧮 ";
+      }
+    </style>
+    <title>My personal profile</title>
+  </head>
+
+  <body class="flex column center">
+    <div class="flex column center mt-10 gap-10 w-600">
+      <div><img class="px-3" src="portait.png" alt="" /></div>
+      <div class="f600">Personal Profile from Christian Fröchtenicht</div>
+      <div>
+        <ul>
+          <li>Trainee at <a target="_blank" href="https://www.techstarter.de">Techstarter</a></li>
+          <li>Work as DevOpsEngener and Developer with</li>
+          <li>Linux, On-Premises, AWS and Azure</li>
+          <li><a target="_blank" href="https://angular.dev/">Angular</a> and <a target="_blank" href="https://nodejs.org/en">Node.js</a> (<a target="_blank" href="https://www.typescriptlang.org/">TS</a>)</li>
+        </ul>
+      </div>
+      <div class="flex row center border border-round p-10 w100">
+        <p>
+          Contact me on
+          <a target="_blank" href="mailto:fchristian1@gmx.net">Email </a>
+          or go to my
+          <a target="_blank" href="https://www.linkedin.com/in/christian-fr%C3%B6chtenicht-3584222b7/">LinketIn</a>
+          profile
+        </p>
+      </div>
+      <div class="flex row center p-10 w100">
+        <p class="tc">We have completet the AWS reStartprogram on <a target="_blank" href="https://techstarter.de">Techstarter</a>, and i have created a <a target="_blank" href="https://miro.com/welcomeonboard/N3djbkdpejN4blBET091WnlSUGFGbzcwMXhrWE45ckhkNHlkYm1WNkkyR2NrSEFRZ25odWFnYjNidXl1TXVYaXwzNDU4NzY0NTM3MjczMDI4NDI2fDI=?share_link_id=885517018178">miroboard</a> with the most used Services from AWS</p>
+      </div>
+    </div>
+  </body>
+</html>

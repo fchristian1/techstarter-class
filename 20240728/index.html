@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EventListenter</title>
+  </head>
+  <body>
+    <button id="btn1">Click me</button
+    ><img
+      id="img1"
+      width="150px"
+      src="https://www.w3schools.com/html/pic_trulli.jpg
+    "
+      alt=""
+    />
+    <script>
+      const btn1 = document.getElementById("btn1");
+      btn1.addEventListener("click", () => {
+        console.log("Button clicked");
+      });
+      const doc = document;
+      doc.addEventListener("keypress", () => {
+        console.log("Document, key pressed");
+      });
+      const img1 = document.getElementById("img1");
+      img1.addEventListener("mouseover", () => {
+        console.log("Mouse over image");
+      });
+    </script>
+  </body>
+</html>

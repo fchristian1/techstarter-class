@@ -1,0 +1,45 @@
+.todo-strikethrough {
+    text-decoration: line-through;
+}
+
+.todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.todo span {
+    font-size: 18px;
+}
+
+.todo button {
+    background: linear-gradient(135deg, #ffffff, #f9f9f9);
+    border: 1px solid #999;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    color: #333;
+}
+
+.todo button:hover {
+    background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+    border-color: #666;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+}
+
+.todo button:active {
+    background: linear-gradient(135deg, #e0e0e0, #cccccc);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+}
+.todo input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+}
