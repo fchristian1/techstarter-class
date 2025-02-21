@@ -1,5 +1,5 @@
 1. git init, commit and push to remote repository
 
-2. git clone, pull, commit, push to remote repository
+2. git clone, pull --rebase, commit, push to remote repository
 
-3. git pull, commit, push to remote repository
+3. git pull --rebase, commit, push to remote repository
